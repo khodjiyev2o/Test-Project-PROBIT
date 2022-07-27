@@ -2,6 +2,16 @@
 {% load static %}
 
 {% block content %}
+
+
+
+    <form method="get">
+        {{ f.form.as_p }}
+        <input type="submit" />
+    </form>
+    {% for obj in f.qs %}
+        {{ obj.name }} <br />
+    {% endfor %}
 <div class="container">
 
 
