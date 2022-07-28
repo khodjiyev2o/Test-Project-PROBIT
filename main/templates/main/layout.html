@@ -75,18 +75,13 @@
             </div>
           </section>
           <section class="col-12">
-            <div class="heading mb-3">BY Brands</div>
+            <div class="heading mb-3">BY Brands:{{cars.count}}</div>
 
             <select class="form-control">
-              <option value="">BMW</option>
-              <option value="" selected>Mercedes</option>
-              <option value="">Audi</option>
-              <option value="">Porsche</option>
-              <option value="">Bugatti</option>
-              <option value="">Cadillac</option>
-              <option value="">Ferrari</option>
-              <option value="">Aston Martin</option>
-              <option value="">Rolls Royce</option>
+              <option value=""></option>
+              {%for car in cars%}
+              <option value="">{{car.brand}}</option>
+             {%endfor%}
             </select>
           </section>
           <section class="col-12" id="fs_price_body">
@@ -145,13 +140,13 @@
                 <li class="time">
                   <span>Automatic</span>
                   <span class="text-right">
-                    <input type="radio" class="pick-time" />
+                    <input type="checkbox" class="pick-time" />
                   </span>
                 </li>
-                <li class="time active">
+                <li class="time ">
                   <span>Manual</span>
                   <span class="text-right">
-                      <input type="radio" class="pick-time" />
+                      <input type="checkbox" class="pick-time" />
                     </i>
                   </span>
                 </li>

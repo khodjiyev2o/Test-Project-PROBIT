@@ -10,7 +10,9 @@ def index(request):
     cars = f.qs
     return render(request,'main/index.html',{'f':f,'cars':cars})
 
-
+def layout(request):
+    cars = Car.objects.all()
+    return render(request,'main/layout.html',{'cars':cars})
 
 class ProductDetailView(DetailView):
     model = Car
