@@ -19,7 +19,6 @@ class Car(models.Model):
     brand = models.ForeignKey(Brand,on_delete=models.SET_NULL,null=True)
     year = models.IntegerField(choices=YEAR_CHOICES, default=datetime.datetime.now().year)
     mileage = models.IntegerField()
-    rating = models.IntegerField()
     price = models.IntegerField()
     automatic_transmission = models.BooleanField(default=True)
 
