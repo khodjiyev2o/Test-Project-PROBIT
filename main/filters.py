@@ -12,3 +12,4 @@ class ProductFilter(django_filters.FilterSet):
     class Meta:
         model = Car
         fields = '__all__'
+        exclude = 'image'

@@ -27,7 +27,7 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="{% url 'index' %}">Avto.net</a>
+        <a class="navbar-brand" href="{% url 'index' %}">Test Project</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -43,8 +43,8 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="{% url 'index' %}"
-                >Store <span class="sr-only">(current)</span></a
+              <a class="nav-link" href="https://pro-bit.si/en/"
+                >PRO-BIT  <span class="sr-only">(current)</span></a
               >
             </li>
           </ul>
@@ -74,59 +74,61 @@
               <div class="col-10" id="fs_page_title">Filters</div>
             </div>
           </section>
+          <section class="col-12">
+            <div class="heading mb-3">BY Brands</div>
 
+            <select class="form-control">
+              <option value="">BMW</option>
+              <option value="" selected>Mercedes</option>
+              <option value="">Audi</option>
+              <option value="">Porsche</option>
+              <option value="">Bugatti</option>
+              <option value="">Cadillac</option>
+              <option value="">Ferrari</option>
+              <option value="">Aston Martin</option>
+              <option value="">Rolls Royce</option>
+            </select>
+          </section>
           <section class="col-12" id="fs_price_body">
             <div>
               <span class="heading">By Price </span>
               <div class="row" style="margin-right: 0px">
-                <div class="col-4 price">
-                  <button class="btn btn-filter" type="button">&dollar;</button>
-                </div>
+                
                 <div class="col-4 price active">
                   <button class="btn btn-filter" type="button">
                     &dollar;&dollar;
                   </button>
                 </div>
-                <div class="col-4 price">
-                  <button class="btn btn-filter" type="button">
-                    &dollar;&dollar;&dollar;
-                  </button>
-                </div>
+                
               </div>
               <input
                 type="number"
                 class="form-control"
-                min="5000"
-                max="100000"
+               
               />
-              <div>
-                <ul>
-                  <li>$5000</li>
-                  <li>$10000</li>
-                </ul>
-              </div>
+              
             </div>
           </section>
 
           <section class="col-12" id="fs_distance_body">
-            <span class="heading"> By Distance </span>
+            <span class="heading"> By Distance  </span>
             <div class="contents">
               <ul>
                 <li class="distance">
-                  <span>From 1 km to 3 km</span>
+                  <span>From 0 km to 1 000 km</span>
                   <span class="text-right">
                     <i></i>
                     <input type="checkbox" class="pick" />
                   </span>
                 </li>
-                <li class="distance active">
-                  <span>From 4 km to 7 km</span>
+                <li class="distance ">
+                  <span>From 1 000 km to  10 000 km</span>
                   <span class="text-right">
                     <input type="checkbox" class="pick" />
                   </span>
                 </li>
                 <li class="distance">
-                  <span>From 8 km to 10 km</span>
+                  <span>From 10 000 km to ... km</span>
                   <span class="text-right">
                     <i></i>
                     <input type="checkbox" class="pick" />
@@ -137,25 +139,19 @@
           </section>
 
           <section class="col-12" id="fs_time_body">
-            <span class="heading"> By Time </span>
+            <span class="heading"> By Transmission </span>
             <div class="contents">
               <ul>
                 <li class="time">
-                  <span>Less than 30 Min</span>
+                  <span>Automatic</span>
                   <span class="text-right">
-                    <input type="checkbox" class="pick-time" />
-                  </span>
-                </li>
-                <li class="time">
-                  <span>30 Min - 45 Min</span>
-                  <span class="text-right">
-                    <input type="checkbox" class="pick-time" />
+                    <input type="radio" class="pick-time" />
                   </span>
                 </li>
                 <li class="time active">
-                  <span>45 Min - 55 Min</span>
+                  <span>Manual</span>
                   <span class="text-right">
-                      <input type="checkbox" class="pick-time" />
+                      <input type="radio" class="pick-time" />
                     </i>
                   </span>
                 </li>
@@ -166,7 +162,7 @@
          
 
           <div class="select-group col-12">
-            <div class="heading mb-3">BY YEAR</div>
+            <div class="heading mb-3">BY Release Year</div>
             From
             <select class="form-control mb-3">
               <option value="">1995</option>
@@ -230,21 +226,7 @@
               <option value="">2022</option>
             </select>
           </div>
-          <section class="col-12">
-            <div class="heading mb-3">BY BRAND</div>
-
-            <select class="form-control">
-              <option value="">BMW</option>
-              <option value="" selected>Mercedes</option>
-              <option value="">Audi</option>
-              <option value="">Porsche</option>
-              <option value="">Bugatti</option>
-              <option value="">Cadillac</option>
-              <option value="">Ferrari</option>
-              <option value="">Aston Martin</option>
-              <option value="">Rolls Royce</option>
-            </select>
-          </section>
+          
         </div>
       </div>
 
@@ -281,6 +263,6 @@
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"
   ></script>
-  <script src="static 'js/script.js'"></script>
+  <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
