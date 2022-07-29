@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import os
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -21,24 +22,29 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-$**pazihtj%#fo2eezod7q9v&uyjt(@=+1(s1yeq5mg^lq)fs-'
 
+SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+DEBUG = str(os.environ.get('DEBUG')) == "1"
+ALLOWED_HOSTS = ['localhost','127.0.0.1']
+if not DEBUG:
+    ALLOWED_HOSTS += [os.environ.get('ALLOWED_HOSTS')]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    ##jazzmin is package for customizing django-admin panel
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    ## apps of the project
     'main',
+    ## library for filtering 
     'django_filters',
 ]
 
@@ -130,3 +136,5 @@ MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+

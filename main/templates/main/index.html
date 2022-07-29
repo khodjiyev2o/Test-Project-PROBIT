@@ -9,22 +9,24 @@
 
 
 <div class="row py-3">
+	<!-- looping through the 'cars' object to get one single model object -->
 {%for car in cars%}
-<div class="col-lg-4">
-	{%if car.image%}
-	<img class="thumbnail" src="{{car.image.url}}">
-	{%else%}
-	<img class="thumbnail" src="{% static 'images/placeholder.png' %}">
-	{%endif%}
-	<div class="box-element product">
-		<h6><strong>{{car.name}}</strong></h6>
-		<hr>
-		<button  class="btn btn-outline-secondary add-btn">Add to Cart</button>
-		<a class="btn btn-outline-success" href="{% url 'car-view' car.id  %}">View</a>
-		<h4 style="display: inline-block;float: right"><strong>${{car.price}}</strong></h4>
+	<div class="col-lg-4">
+		<!-- conditional to check whether car has image or not -->
+		{%if car.image%}
+		<img class="thumbnail" src="{{car.image.url}}">
+		{%else%}
+		<img class="thumbnail" src="{% static 'images/placeholder.png' %}">
+		{%endif%}
+		<div class="box-element product">
+			<h6><strong>{{car.name}}</strong></h6>
+			<hr>
+			<!-- view page  -->
+			<a class="btn btn-outline-success" href="{% url 'car-view' car.id  %}">View</a>
+			<h4 style="display: inline-block;float: right"><strong>${{car.price}}</strong></h4>
 
+		</div>
 	</div>
-</div>
 {%endfor%}
 </div>
 </div>
