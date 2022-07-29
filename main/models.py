@@ -6,7 +6,11 @@ import datetime
 
 YEAR_CHOICES = [(r,r) for r in range(1984, datetime.date.today().year+1)]
  
-
+CHOICES = (
+    (0, 'Automatic'),
+    (1, 'Manual'),
+    (None,'Both'),
+)
 class Brand(models.Model):
     name = models.CharField(max_length=150,unique=True)
 
@@ -21,7 +25,7 @@ class Car(models.Model):
     year = models.IntegerField(choices=YEAR_CHOICES, default=datetime.datetime.now().year)
     mileage = models.IntegerField()
     price = models.IntegerField()
-    automatic_transmission = models.BooleanField(default=True)
+    automatic_transmission = models.BooleanField(default=True,choices=CHOICES)
     image =  models.ImageField(upload_to='cars',blank = True, null = True)
 
 

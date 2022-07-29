@@ -1,18 +1,16 @@
 from django.shortcuts import render
 from .models import Car
-from .filters  import  ProductFilter
+from .filters  import  CarFilter
 from django.views.generic.detail import DetailView
 # Create your views here.
 
 def index(request):
     cars = Car.objects.all()
-    f = ProductFilter(request.GET, queryset=Car.objects.all())
+    f = CarFilter(request.GET, queryset=Car.objects.all())
     cars = f.qs
-    return render(request,'main/index.html',{'f':f,'cars':cars})
+    return render(request,'main/index.html',{'forms':f,'cars':cars})
 
-def layout(request):
-    cars = Car.objects.all()
-    return render(request,'main/layout.html',{'cars':cars})
+
 
 class ProductDetailView(DetailView):
     model = Car
