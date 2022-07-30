@@ -1,5 +1,7 @@
 name: Django CI
-
+env:
+  SECRET_KEY: 'django-insecure-anf%9@%ji0+d3ozn-)7w9@%@+uf8gbrl8^rm1ja5=!m@6-5r)9'
+  DEBUG : True
 on:
   push:
 
