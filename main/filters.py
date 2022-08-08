@@ -17,23 +17,71 @@ CAR_CHOICES=[car.brand for car in Car.objects.all()]
 ## filter for Car model class
 class CarFilter(django_filters.FilterSet):
     ##filtering through the range year(min and max)
-    start_date = ChoiceFilter(field_name='year',lookup_expr='gte', choices=YEAR_CHOICES,label='',widget=forms.Select(attrs={'class': 'form-control'}))
-    end_date = ChoiceFilter(field_name='year',lookup_expr='lte', choices=YEAR_CHOICES,label='',widget=forms.Select(attrs={'class': 'form-control'}))
+    start_date = ChoiceFilter(
+         field_name='year',
+         lookup_expr='gte',
+         choices=YEAR_CHOICES,
+         widget=forms.Select(attrs={'class': 'form-control'})
+         label='',
+    )
+    end_date = ChoiceFilter(
+         field_name='year',
+         lookup_expr='lte',
+         choices=YEAR_CHOICES,
+         label='',
+         widget=forms.Select(
+              attrs={
+                   'class': 'form-control'
+              }
+         )
+    )
     
     
     ##filtering through the transmission ,if automatic then it is true, else Manual 
-    automatic_transmission = ChoiceFilter(field_name='automatic_transmission',choices=CHOICES,label='',widget=forms.Select(attrs={'class': 'form-control'}))
+    automatic_transmission = ChoiceFilter(
+         field_name='automatic_transmission',
+         choices=CHOICES,label='',
+         widget=forms.Select(
+              attrs={
+                   'class': 'form-control'
+              }
+         )
+    )
     
     ##filtering by price (prices lower or equal price than input value will be shown)
-    price = NumberFilter(field_name='price',lookup_expr='lte',label='',widget=forms.NumberInput(attrs={'class': 'form-control','placeholder':'Enter your budget...'}))
+    price = NumberFilter(
+         field_name='price',
+         lookup_expr='lte',
+         label='',
+         widget=forms.NumberInput(
+              attrs={
+                   'class': 'form-control',
+                   'placeholder':'Enter your budget...'
+              }
+         )
+    )
     
     ## filtering by how much car has been driven (cars with less then input value will be shown)
-    mileage = NumberFilter(field_name='mileage',lookup_expr='lte',label='',widget=forms.NumberInput(attrs={'class': 'form-control','placeholder':'Enter the most km...'}))
+    mileage = NumberFilter(
+         field_name='mileage',
+         lookup_expr='lte',
+         label='',
+         widget=forms.NumberInput(
+              attrs={
+                   'class': 'form-control',
+                   'placeholder':'Enter the most km...'
+              }
+         )
+    )
     
     ##filtering by brands(Brand names will be shown only the ones who are present in the database)
     brand =  ModelChoiceFilter(
         queryset=Brand.objects.all(),
-       widget=forms.Select(attrs={'class': 'form-control','placeholder':'Enter  price...'})
+       widget=forms.Select(
+            attrs={
+                 'class': 'form-control',
+                 'placeholder':'Enter  price...'}
+       )
     )
     class Meta:
         model = Car
