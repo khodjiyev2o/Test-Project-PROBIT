@@ -6,7 +6,7 @@ from django.views.generic.detail import DetailView
 
 def index(request):
     cars = Car.objects.all()
-    filter_form = CarFilter(request.GET, queryset=Car.objects.all())
+    filter_forms = CarFilter(request.GET, queryset=Car.objects.all())
     cars = f.qs
     return render(request,'main/index.html',{'filter_forms':filter_forms,'cars':cars})
 
