@@ -60,7 +60,7 @@
     <div class="row">
       <div class="col-md-4 px-5" style="max-width: 20.333333%">
           <div class="input-group-append mt-3">
-            {{forms.form.name}}
+            {{filter_forms.form.name}}
             <button class="btn btn-success rounded-right">Search</button>
           </div>
        
@@ -76,7 +76,7 @@
           <section class="col-12">
             <div class="heading mb-3">BY Brands:</div>
 
-            {{forms.form.brand}}
+            {{filter_forms.form.brand}}
           </section>
           <section class="col-12" id="fs_price_body">
             <div>
@@ -90,7 +90,7 @@
                 </div>
                 
               </div>
-              {{forms.form.price}}
+              {{filter_forms.form.price}}
               
             </div>
           </section>
@@ -98,14 +98,14 @@
           <section class="col-12" id="fs_distance_body">
             <span class="heading"> By Distance  </span>
             <div class="contents">
-              {{forms.form.mileage}}
+              {{filter_forms.form.mileage}}
             </div>
           </section>
 
           <section class="col-12" id="fs_time_body">
             <span class="heading"> By Transmission </span>
             <div class="contents">
-              {{forms.form.automatic_transmission}}
+              {{filter_forms.form.automatic_transmission}}
             </div>
           </section>
 
@@ -114,9 +114,9 @@
           <div class="select-group col-12">
             <div class="heading mb-3">BY Release Year</div>
             From
-            {{forms.form.start_date}}
+            {{filter_forms.form.start_date}}
             To
-            {{forms.form.end_date}}
+            {{filter_forms.form.end_date}}
           </div>
           
         </div>
